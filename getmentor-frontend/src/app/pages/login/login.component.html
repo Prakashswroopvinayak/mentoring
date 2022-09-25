@@ -1,0 +1,39 @@
+<div class = "container-fluid bg-light-green ">
+    <br /> <br /> <br /> <br />
+    <div class="row">
+        
+        <div class = "col-sm-6">
+            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <br /><br />
+                <h2 class="mb-7">We are more than just a company</h2>
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+        </div>
+        <div class = "col-sm-4">
+            <br /><br />
+            <div class = "container-fluid bg-dark-green">
+                <form (ngSubmit) = "formSubmit()">
+                    <br />
+                    <span style = "color:cornsilk"><h1>Login</h1></span>
+                    <mat-form-field class = "full-width" appearance="standard">
+                        <label style = "color:cornsilk">Username</label>
+                        <input required matInput [(ngModel)]= "loginData.username" name = "username"/>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class = "full-width" appearance="legacy">
+                        <label style = "color:cornsilk">Password</label>
+                        <input required matInput [(ngModel)]= "loginData.password" name = "password" type="password"/>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                    <div class = "container-fluid" >
+                        <button type = "submit" mat-raised-button color="primary" class = "btn-lg">Login</button>
+                    </div>
+                    <br /><br />
+                </form>
+            </div>
+            <br /><br /> <br /> <br /> <br /> <br />
+        </div>
+        <div class = "col-sm-2"></div>
+    </div>
+</div>

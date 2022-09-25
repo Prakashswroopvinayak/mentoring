@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <br />
+            <div class="mat-card">
+                <mat-action-list>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/user/profile"> Profile </button>
+                    <button *ngIf = "!this.isMentor" mat-list-item class = "bg-blue mg-2" routerLink = "/user/registermentor" > Become a Mentor </button>
+                    <button *ngIf = "this.isMentor" mat-list-item class = "bg-blue mg-2" routerLink = "/mentor"> Mentor Profile </button>
+                    <button *ngIf = "this.isMentor" mat-list-item class = "bg-blue mg-2" routerLink = "/mentee"> Mentee Profile </button>
+                    <button *ngIf = "this.isMentor" mat-list-item class = "bg-blue mg-2"> Delete Mentor Profile </button>
+                    
+                </mat-action-list>
+    
+            </div>
+
+            
+        </div>
+        <div class="col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <br />
+            
+                <mat-card class="example-card" style = "min-height: 400px !important;">
+                    <mat-card-title-group>
+                      <mat-card-title>{{this.mentor.user.firstname + " "+ this.mentor.user.lastname}}</mat-card-title>
+                      <mat-card-subtitle>{{this.mentor.currentdesig}}</mat-card-subtitle>
+                      <!--<img mat-card-image style = "vertical-align: middle;
+                                    width: 100px;
+                                    border-radius: 50%;"
+                       class= "img-responsive" src= {{this.mentor.user.profile}} >-->
+                       <img mat-card-image style = "vertical-align: middle;
+                                    width: 100px;
+                                    border-radius: 50%;"
+                       class= "img-responsive" src= "../../../../../../assets/mentor.jpeg" >
+                    
+                    </mat-card-title-group>
+                    <mat-card-content *ngIf = "this.mentor.rating">
+                      <mat-icon  *ngFor = "let i of [].constructor(this.mentor.rating)" color="accent">star</mat-icon>
+                    </mat-card-content>
+                    <mat-card-content>
+                      <span *ngIf = "this.mentor.companyname != 'None'"><mat-icon>work</mat-icon>{{this.mentor.companyname}}<br/></span>
+                      <br />
+                      <mat-icon>cast_for_education</mat-icon>{{this.mentor.education}}<br/><br/>
+                      {{this.mentor.college}}<br/><br />
+                
+                      <button mat-raised-button mat-btn-sm class = "mg-5">Web Development</button>
+                      <button mat-raised-button mat-btn-sm class = "mg-5">C++</button>
+                      <button mat-raised-button mat-btn-sm class = "mg-5">GRE</button>
+                      <button mat-raised-button mat-btn-sm class = "mg-5">Higher Studies</button>
+                        <br /><br />
+                        {{this.mentor.description}}
+                    </mat-card-content>
+                    <mat-card-actions style = "text-align:center !important;">
+                      <button mat-raised-button color="primary">Update Profile</button>
+                    </mat-card-actions>
+                  </mat-card>             
+                
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

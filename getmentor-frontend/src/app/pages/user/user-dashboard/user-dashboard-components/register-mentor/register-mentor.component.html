@@ -1,0 +1,49 @@
+
+            <div class = "container-fluid" style="text-align: center;">
+                <form (ngSubmit) = "formSubmit()">
+                    <br />
+                    <span><h1>Enter details to become a mentor</h1></span>
+                    <mat-form-field class = "full-width" appearance="fill" style="width: 500px">
+                        <label>Education</label>
+                        <input required matInput [(ngModel)]= "Dto.mentor.education" name = "education"/>
+                        <mat-hint>Kindly write about your highest education</mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class = "full-width" appearance="fill" style="width: 500px">
+                        <label>College</label>
+                        <input required matInput [(ngModel)]= "Dto.mentor.college" name = "college"/>
+                        <mat-hint>Kindly mention your University/College of Highest Education(UG | PG)</mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class = "full-width" appearance="fill" style="width: 500px">
+                        <label>Current Designation</label>
+                        <input required matInput [(ngModel)]= "Dto.mentor.currentdesig" name = "currentdesig"/>
+                        <mat-hint>Mention your current designation and experience that makes you a good fit</mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class = "full-width" appearance="fill" style="width: 500px">
+                        <label>Company Name</label>
+                        <input required matInput [(ngModel)]= "Dto.mentor.companyname" name = "companyname"/>
+                        <mat-hint>Mention Your curent Company's name</mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class = "full-width" appearance="fill" style="width: 500px">
+                        <label>Description</label>
+                        <textarea required matInput [(ngModel)]= "Dto.mentor.description" name = "description"></textarea>
+                        <mat-hint>Give a short intro about yourself</mat-hint>
+                    </mat-form-field>
+                    <br />
+                    <ng-select [items]="allSkills"
+                            bindLabel="skillName"
+                            placeholder="Select item"
+                            appendTo="body"
+                            [multiple]=true
+                            [(ngModel)]="selected" name = "selectedSkills">
+                    </ng-select>
+                    <br />
+                    <div class = "container-fluid" >
+                        <button type = "submit" mat-raised-button color="primary" class = "btn-lg" style="width: 500px">Done</button>
+                    </div>
+                    <br /><br />
+                </form>
+            </div>

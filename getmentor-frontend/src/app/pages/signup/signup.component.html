@@ -1,0 +1,52 @@
+<div class = "container-fluid" style = "background-color: #43A047;">
+
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4" id="signup">
+      <span style="color: cornsilk;"><h1>Be a Part of Our World</h1></span>
+    <br/><br/>
+    <div id="inner-wrapper" class="container signup" style="background-color: #2E7D32;">      
+        <form (ngSubmit) = "formSubmit()">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+              <input [(ngModel)]= "user.username" name = "username" required type="text" class="form-control" placeholder="Username">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+              <input [(ngModel)]= "user.firstname" name = "firstname" required type="text" class="form-control" placeholder="Firstname">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+              <input [(ngModel)]= "user.lastname" name = "lastname" required type="text" class="form-control" placeholder="Lastname">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+              <input [(ngModel)]= "user.email" name = "email" type="email" required class="form-control" placeholder="Email Address">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+              <input [(ngModel)]= "user.password" name = "password" type="password" required class="form-control" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+              <input [(ngModel)]= "confirmpass" name = "confirmpass" type="password" required class="form-control" placeholder="Confirm Password">
+            </div>
+          </div>
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
+        </form>
+      
+    </div></div>
+  </div>
+  
+  </div>

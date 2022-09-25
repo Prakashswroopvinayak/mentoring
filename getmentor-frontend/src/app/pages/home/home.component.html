@@ -1,0 +1,66 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <br /><br /><br /><br /><br />
+        <h1 class="display-4">Getmentor provides you guidance</h1>
+        <p class="lead">We aim to become a stop solution for guidance in literally any field that can help you to grow.</p>
+        <div class = "">
+          <a *ngIf = "!this.isUserActive" mat-raised-button color="primary" class = "btn btn-lg" routerLink = "/login">Become a Mentor</a> &nbsp;
+          <a *ngIf = "this.isUserActive" mat-raised-button color="primary" class = "btn btn-lg" routerLink = "/user/">Become a Mentor</a> &nbsp;
+          <a  routerLink = "/mentors/all" mat-raised-button color="primary" class = "btn btn-lg">Find a Mentor</a>
+        
+        </div>
+
+    </div>
+    <br /><br /><br /><br />
+</div>
+<br /><br />
+<!--topmentor-->
+<div class = "container">
+    <div class = "container">
+        <h2>Our Mentors</h2>
+    </div>
+    <br>
+    <carousel [dots] = true [height]="450" [cellsToShow]="3" [autoplay] = true [autoplayInterval] = "5000" [pauseOnHover]=true>
+        <div class="carousel-cell"  *ngFor = "let mentor of topMentors" >
+            <app-mentor-carousel [mentor]="mentor"></app-mentor-carousel>
+        </div>
+    </carousel>
+    <div style = "text-align: center !important;">
+        <a routerLink = "/mentors/all" mat-raised-button style = "color: blueviolet; font-size: 24px;">Explore All Mentors</a>
+    </div>
+</div>
+<br />
+
+<!--skills-->
+<div class = "container-fluid" style = "background-color: #004953;padding: 20px;">
+    <div class = "row">
+        <div class = "col-sm-2"></div>
+        <div class = "col-sm-8 pos-center">
+            <span class = "text-white"><h2>Mentoring Topics</h2></span><br />
+            <div class = "row">
+                <div class = "col-sm-3" *ngFor = "let skill of allSkills">
+                    <mat-card class = "mg-2">{{skill.skillName}}</mat-card>
+                </div>
+                
+             </div>       
+        </div>
+        <div class = "col-sm-2"></div>
+    </div>
+</div>
+<!--feedbacks-->
+<br />
+<div class = "container">
+    <div class = "container">
+        <h2>What our Mentees have to say ...</h2>
+    </div>
+    <br>
+    <carousel [dots] = true [height]="450" [cellsToShow]="3" [autoplay] = true [autoplayInterval] = "5000" [pauseOnHover]=true>
+        <div class="carousel-cell"  *ngFor = "let mentor of topMentors" >
+            <app-mentor-carousel [mentor]="mentor"></app-mentor-carousel>
+        </div>
+    </carousel>
+    
+</div>
+<br />
+
+

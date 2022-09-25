@@ -1,0 +1,37 @@
+<!--<p>video-call-room works!</p>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <p class="video-description">Me</p>
+        <video #local_video [autoplay]="true" [muted]="true">
+
+        </video>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <p class="video-description">Mentee</p>
+        <video #mentee_video [autoplay]="true" [muted]="true">
+            
+        </video>
+    </mat-grid-tile>
+</mat-grid-list>
+<button mat-raised-button color="primary" (click)="startLocalVideo()">Start video</button>
+<button mat-raised-button color="primary" (click)="pauseLocalVideo()">Stop video</button>
+<button mat-raised-button color="primary">Call</button>
+<button mat-raised-button color="primary">Hangup</button>
+-->
+
+<form id="join" onsubmit="fun()">
+    <h2>Join Room</h2>
+    <div class="input-container">
+        <input id="name" type="text" name="username" placeholder="Your name" />
+    </div>
+    <div class="input-container">
+        <input id="token" type="text" name="token" placeholder="Auth token" />
+    </div>
+    <button type="button" class="btn-primary" id="join-btn" >Join</button>
+</form>
+<div id="conference" class="conference-section">
+    <h2>Conference</h2>
+
+    <div #peersContainer id="peersContainer">Nobody in the Room</div>
+    <button type="button" class="btn-primary" id="leaveroom">leave</button>
+</div>

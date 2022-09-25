@@ -1,0 +1,44 @@
+<mat-toolbar color = "">
+    <a routerLink = "/" mat-icon-button class="example-icon" aria-hidden="false" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </a>
+    
+    <a routerLink = "/" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        Getmentor
+  </a>
+  <span class="example-spacer"></span>
+    <a 
+    *ngIf = "!this.isUserActive"  
+    routerLink = "/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          Login    
+    </a>
+    &nbsp;
+    <a 
+    *ngIf = "!this.isUserActive"  
+    routerLink = "/signup" mat-icon-button class="example-icon" aria-hidden="false" aria-label="Example icon-button with share icon">
+      Register
+    </a>
+    
+    <a 
+    *ngIf = "this.isUserActive && user!=null"
+    [matMenuTriggerFor]="menu"
+    mat-icon-button class="example-icon" aria-hidden="false" aria-label="Example icon-button with share icon">
+    {{user.username}}
+    </a>
+    
+    &nbsp;
+    <a 
+    *ngIf = "this.isUserActive"  
+    mat-icon-button class="example-icon" aria-hidden="false" aria-label="Example icon-button with share icon"
+    (click)="logout()">
+    
+      Logout
+    </a>
+  
+  </mat-toolbar>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink = "/user/profile">Edit Profile</button>
+    <button *ngIf = "this.isUserActive && this.isMentor" mat-menu-item routerLink = "/mentor/mentorprofile">Mentor Profile</button>
+    <button mat-menu-item>Mentee Profile</button>
+  </mat-menu>
+  

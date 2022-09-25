@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class = "col-sm-4" *ngFor = "let mentee of allmentees">
+            <mat-card class = "mg-2">
+                <mat-card-title>{{mentee.name}}</mat-card-title>
+                {{mentee.education}}<br />
+                {{mentee.college}}<br />
+                {{mentee.currentdesig}}<br />
+                {{mentee.companyname}}<br />
+                {{mentee.description}}<br />
+                
+            </mat-card>
+        </div>
+        
+        
+    </div>
+</div>

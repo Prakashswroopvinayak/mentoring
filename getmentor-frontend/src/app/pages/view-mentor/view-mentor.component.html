@@ -1,0 +1,94 @@
+<!--<div class = "container-fluid">
+    <div class="row">
+        <div class="col-sm-4" style = "background-color:#125c68;height:100vh">
+hlu
+        </div>
+        <div class="col-sm-8">
+bhjb,<br/>
+bhjb,<br/>bhjb,<br/>bhjb,<br/>bhjb,<br/>bhjb,<br/>bhjb,<br/>
+        </div>
+    </div>
+</div>-->
+<br /><br />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4" style = "background-color: #b8d5f0; text-align: center;">
+            <br /><br />
+            
+            <img class = "img-responsive img-thumbnail" src = "https://firebasestorage.googleapis.com/v0/b/simpliclarify-mentor.appspot.com/o/images%2FWhatsApp%20Image%202021-05-02%20at%2011.36.45%20AM%20-%20Rachana%20Reddy.jpeg?alt=media&token=71f37293-de0f-4ee0-86e4-968b9eb86c44" style="width:15rem;border-radius: 50%;" />
+            <br /><br />
+            <button mat-raised-button class="mg-5 font-20">Higher Studies</button><br/>
+            <button mat-raised-button class="mg-5 font-20">Web Development</button><br/>
+            <button mat-raised-button class="mg-5 font-20">Higher Studies</button><br/>
+            <button mat-raised-button class="mg-5 font-20">Web Development</button><br/>
+            <br />  
+        </div>
+        <div class="col-sm-8" style = "padding-left: 80px;">
+            <br />
+            <div style = "text-align: center;">    
+            <h2>Prakash Swaroop Vinayak</h2>
+            <span style = "color: rgb(142, 100, 161);"><b>Alumni Student | MBA, General Studies | Indian School of Business</b></span>
+            <br />
+            Mentored 12 mentees
+            <br/>
+            <mat-icon color="accent">star</mat-icon>
+            <mat-icon color="accent">star</mat-icon>
+            <mat-icon color="accent">star</mat-icon>
+            <mat-icon color="accent">star</mat-icon>
+            <mat-icon color="accent">star</mat-icon><br />
+            </div>
+            <br />
+            <div class = "container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--<p>{{selected}}</p>-->
+                        <p>{{selected | date:'dd-MM-yyyy'}}</p>
+                        <div>
+                            <div *ngIf = "this.slots">
+                                <div *ngFor = "let slot of this.slots">
+                                    <button mat-stroked-button color="primary" (click) = "setSelectedSlot(slot)" >{{slot.strtTime}} - {{slot.endTime}}</button>
+                                    <br /><br />
+                                </div>
+                            </div>
+                            <img src="../../../assets/noslot.jpg" *ngIf="selected && slots && slots.length===0" style="max-width: 200px;"/>
+                        </div>
+                        <button mat-raised-button color="primary" *ngIf = "this.selectedSlot" (click) = "saveSchedule()">Confirm</button>
+                                    
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-accordion class="example-headers-align">
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                  <mat-panel-title>
+                                  <button mat-raised-button color="primary">
+                                       <mat-icon>video_call</mat-icon> Schedule a Call
+                                    </button>
+                                  </mat-panel-title>
+                                </mat-expansion-panel-header>
+                            
+                                <mat-card class="demo-inline-calendar-card">
+                                    <mat-calendar [(selected)]="selected" (selectedChange)="showSlots($event)"></mat-calendar>
+                                </mat-card>
+                                
+                            </mat-expansion-panel>             
+                        </mat-accordion>      
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+            <br /><br/>
+            <!--<div style = "background-color: rgb(140, 230, 99);padding: 20px;">-->
+            <span><h4><b>About Myself</b></h4></span>
+            
+            <div style = "color: rgb(142, 100, 161);">
+            A final year undergrad student going to pursue Master's in Computer Science from Columbia University. Working on my application process almost a year ago, I understood the nook and crook of getting an admission at the top universities in the US. Now, being a part of this platform,I want to help and guide prospective students for their Masters programs.
+            
+            </div>
+            <!--</div>-->
+        </div>
+        
+    </div>
+    
+</div>

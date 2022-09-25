@@ -1,0 +1,40 @@
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <ng-select [items]="allSkills"
+                    bindLabel="skillName"
+                    placeholder="Select Topics or Skills you need help in "
+                    appendTo="body"
+                    [multiple]=true
+                    [(ngModel)]="selected" name = "selectedSkills">
+        </ng-select>
+        <br />
+        <ng-select [items]="allMentors"
+                    bindLabel="user.username"
+                    placeholder="Select mentors you need help from "
+                    appendTo="body"
+                    [multiple]=true
+                    [(ngModel)]="selected1" name = "selectedMentors">
+                    
+                    <ng-template ng-label-tmp let-item="item"  let-clear="clear"    >
+                        <span >{{ item.user.firstname + ' ' + item.user.lastname }}</span>
+                        <span class="ng-value-icon right" (click)="clear(item)">×</span>
+                    </ng-template>
+                    <ng-template ng-option-tmp let-item="item" let-search="searchTerm" let-index="index">
+                          <span >{{ item.user.firstname + ' ' + item.user.lastname }}</span>
+                    </ng-template>  
+                    <!--<ng-template ng-label-tmp let-item="item" let-clear="clear">
+                        <span class="ng-value-label">{{ item.user.firstname + ' ' + item.user.lastname }}</span>
+                        <span class="ng-value-icon right" (click)="clear(item)">×</span>
+                    </ng-template>-->
+
+        </ng-select>
+        
+        <div class="col-sm-4" *ngFor = "let mentor of topMentors">
+
+            <app-mentor-carousel [mentor]="mentor"></app-mentor-carousel>
+
+        </div>        
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<mat-card class="local-preview">
+    <mat-card-header>Local Preview</mat-card-header>
+    <mat-card-body *ngIf="audioInputDevices.length === 0 || videoDevices.length === 0">
+      <div class="alert alert-info">Please allow access to microphone and camera devices to continue!</div>
+      <button (click)="getMediaPermissions()" fullWidth ngButton status="info">Get Permission</button>
+    </mat-card-body>
+    <mat-card-body [ngClass]="{ hidden: audioInputDevices.length === 0 || videoDevices.length === 0 }">
+      <div class="preview">
+        <div class="video-container">
+          <video #previewVideo [muted]="true" autoplay playsinline></video>
+        </div>
+        <div class="controls">
+          <button
+            (click)="toggleAudio()"
+            [ngTooltip]="isAudioEnabled ? 'Mute Audio' : 'Unmute Audio'"
+            ghost
+            ngButton
+            ngTooltipTrigger="hover"
+            shape="round"
+          >
+            <ng-icon [icon]="isAudioEnabled ? 'mic' : 'mic-off'"></ng-icon>
+          </button>
+          <button
+            (click)="toggleVideo()"
+            [ngTooltip]="isVideoEnabled ? 'Mute Video' : 'Unmute Video'"
+            ghost
+            ngButton
+            ngTooltipTrigger="hover"
+            shape="round"
+          >
+            <ng-icon [icon]="isVideoEnabled ? 'video' : 'video-off'"></ng-icon>
+          </button>
+        </div>
+      </div>
+      <!--<ng-select
+        (selectedChange)="selectAudioInputDevice($event.target.value)"
+        [selected]="selectedAudioInputDeviceId"
+        fullWidth
+        size="small"
+      >
+        <ng-option *ngFor="let device of audioInputDevices" [value]="device.deviceId"> {{ device.label }} </ng-option>
+      </ng-select>-->
+      
+      <ng-select (change)="selectAudioInputDevice($event)" [selected]="selectedAudioInputDeviceId" fullWidth size="small">
+        <ng-option *ngFor="let device of audioInputDevices" [value]="device.deviceId"> {{ device.label }} </ng-option>
+      </ng-select>
+      <ng-select (change)="selectVideoDevice($event)" [selected]="selectedVideoDeviceId" fullWidth>
+        <ng-option *ngFor="let device of videoDevices" [value]="device.deviceId"> {{ device.label }} </ng-option>
+      </ng-select>
+
+
+      <button (click)="joinRoom()" fullWidth ngButton size="small" status="primary">Join Room</button>
+    </mat-card-body>
+  </mat-card>
+  

@@ -1,0 +1,10 @@
+.jumbotron{
+    background-image: url("../../../assets/user-bg.jpg");
+    color:blanchedalmond;
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+.mg-5{
+    margin:5px;
+  }

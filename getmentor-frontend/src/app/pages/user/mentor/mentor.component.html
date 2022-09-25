@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <br />
+            <div class="mat-card">
+                <mat-action-list>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/mentor/mentorprofile">My Mentor Profile </button>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/mentor/allmentee"> Mentee List </button>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/mentor/requests"> Requests </button>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/mentor/schedule"> Schedule </button>
+                    <button mat-list-item class = "bg-blue mg-2" routerLink = "/mentor/videocall"> Join Session </button>
+                                        
+                </mat-action-list>
+    
+            </div>
+
+            
+        </div>
+        <div class="col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

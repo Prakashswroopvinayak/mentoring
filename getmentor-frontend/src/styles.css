@@ -1,0 +1,12 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+.pos-center{
+    text-align: center !important;
+}
+.mg-5{
+    margin:5px;
+  }
+  .mg-2{
+    margin:2px;
+  }

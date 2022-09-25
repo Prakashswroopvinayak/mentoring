@@ -1,0 +1,13 @@
+.mg-5{
+    margin: 5px;
+}
+.font-20{
+    font-size: 18px;
+}
+.demo-inline-calendar-card {
+    width: 300px;
+  }
+  .active{
+      background-color: purple;
+      color: #fff;
+  }
